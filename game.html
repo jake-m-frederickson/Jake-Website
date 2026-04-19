@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>What Are the Odds?</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 0.5rem;
+            color: #e25822;
+        }
+
+        .caption {
+            font-size: 1.3rem;
+            text-align: center;
+            color: #cccccc;
+            margin-bottom: 2rem;
+        }
+
+        .game-box {
+            background-color: #2a2a2a;
+            border: 3px solid #e25822;
+            padding: 2.5rem 3rem;
+            text-align: center;
+            max-width: 480px;
+            width: 100%;
+        }
+
+        label {
+            display: block;
+            font-size: 1.1rem;
+            color: #cccccc;
+            margin-bottom: 0.75rem;
+        }
+
+        input[type="number"] {
+            width: 100px;
+            padding: 0.6rem;
+            font-size: 1.5rem;
+            text-align: center;
+            border: 2px solid #e25822;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+            outline: none;
+        }
+
+        button {
+            display: block;
+            margin: 0 auto;
+            padding: 0.75rem 2.5rem;
+            font-size: 1.3rem;
+            font-family: 'Georgia', serif;
+            font-weight: bold;
+            background-color: #e25822;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+            letter-spacing: 0.05em;
+            transition: background-color 0.2s;
+        }
+
+        button:hover {
+            background-color: #c0431a;
+        }
+
+        #result {
+            margin-top: 1.5rem;
+            font-size: 1.4rem;
+            font-weight: bold;
+            min-height: 2rem;
+        }
+
+        #result.win { color: #2ecc71; }
+        #result.lose { color: #e74c3c; }
+
+        #numbers {
+            margin-top: 1rem;
+            font-size: 0.95rem;
+            color: #aaaaaa;
+        }
+
+        .back-link {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+        }
+
+        .back-link a {
+            color: #e25822;
+            text-decoration: none;
+        }
+
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>What Are the Odds?</h1>
+    <p class="caption">What are the odds you follow my Instagram?</p>
+
+    <div class="game-box">
+        <label for="userNumber">Pick a number from 1 to 10:</label>
+        <input type="number" id="userNumber" min="1" max="10" placeholder="?" />
+        <button onclick="playGame()">GO!</button>
+
+        <div id="result"></div>
+        <div id="numbers"></div>
+    </div>
+
+    <div class="back-link">
+        <a href="index.html">← Back to Main Site</a>
+    </div>
+
+    <script>
+        function playGame() {
+            const userInput = parseInt(document.getElementById('userNumber').value);
+            const resultDiv = document.getElementById('result');
+            const numbersDiv = document.getElementById('numbers');
+
+            if (isNaN(userInput) || userInput < 1 || userInput > 10) {
+                resultDiv.textContent = "Please enter a number between 1 and 10!";
+                resultDiv.className = "lose";
+                numbersDiv.textContent = "";
+                return;
+            }
+
+            const computerNumber = Math.floor(Math.random() * 10) + 1;
+
+            numbersDiv.textContent = "You picked " + userInput + " — Computer picked " + computerNumber;
+
+            if (userInput === computerNumber) {
+                resultDiv.textContent = "You have to follow it!";
+                resultDiv.className = "win";
+            } else {
+                resultDiv.textContent = "Try Again!";
+                resultDiv.className = "lose";
+            }
+        }
+    </script>
+
+</body>
+</html>

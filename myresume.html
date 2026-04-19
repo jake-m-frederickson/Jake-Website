@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jacob M. Frederickson – Résumé</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet" />
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+ 
+        :root {
+            --navy: #1a2742;
+            --teal: #0085A1;
+            --light-gray: #f4f5f7;
+            --mid-gray: #6c757d;
+            --border: #d8dde6;
+            --text: #212529;
+        }
+ 
+        body {
+            font-family: 'Source Sans 3', sans-serif;
+            font-weight: 400;
+            font-size: 15px;
+            color: var(--text);
+            background: var(--light-gray);
+            padding: 2.5rem 1rem;
+            line-height: 1.6;
+        }
+ 
+        .page {
+            max-width: 860px;
+            margin: 0 auto;
+            background: #fff;
+            box-shadow: 0 4px 32px rgba(26,39,66,0.10);
+        }
+ 
+        /* Header */
+        .resume-header {
+            background: var(--navy);
+            color: #fff;
+            padding: 2.8rem 3rem 2rem;
+        }
+ 
+        .resume-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            font-weight: 700;
+            letter-spacing: 0.01em;
+            margin-bottom: 0.5rem;
+        }
+ 
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.3rem 1.5rem;
+            font-size: 0.9rem;
+            font-weight: 300;
+            color: rgba(255,255,255,0.85);
+            margin-top: 0.6rem;
+        }
+ 
+        .contact-info a {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+            transition: color 0.2s;
+        }
+ 
+        .contact-info a:hover { color: #fff; }
+ 
+        /* Body */
+        .resume-body {
+            padding: 2rem 3rem 2.5rem;
+        }
+ 
+        /* Section */
+        .section {
+            margin-bottom: 1.8rem;
+        }
+ 
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--teal);
+            border-bottom: 2px solid var(--teal);
+            padding-bottom: 0.3rem;
+            margin-bottom: 1rem;
+        }
+ 
+        /* Entry */
+        .entry {
+            margin-bottom: 1.2rem;
+        }
+ 
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 0.2rem;
+        }
+ 
+        .entry-org {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--navy);
+        }
+ 
+        .entry-location {
+            font-size: 0.85rem;
+            color: var(--mid-gray);
+            font-weight: 300;
+        }
+ 
+        .entry-sub {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 0.2rem;
+            margin-top: 0.1rem;
+            margin-bottom: 0.5rem;
+        }
+ 
+        .entry-role {
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+ 
+        .entry-date {
+            font-size: 0.85rem;
+            color: var(--mid-gray);
+            font-style: italic;
+        }
+ 
+        /* Education special */
+        .entry-gpa {
+            font-size: 0.85rem;
+            color: var(--mid-gray);
+        }
+ 
+        ul.bullet-list {
+            list-style: none;
+            padding: 0;
+        }
+ 
+        ul.bullet-list li {
+            position: relative;
+            padding-left: 1.1rem;
+            margin-bottom: 0.25rem;
+            font-size: 0.92rem;
+            color: var(--text);
+        }
+ 
+        ul.bullet-list li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: var(--teal);
+            font-size: 0.75rem;
+            top: 0.05em;
+        }
+ 
+        /* Skills row */
+        .skills-list {
+            list-style: none;
+            padding: 0;
+        }
+ 
+        .skills-list li {
+            position: relative;
+            padding-left: 1.1rem;
+            margin-bottom: 0.25rem;
+            font-size: 0.92rem;
+        }
+ 
+        .skills-list li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: var(--teal);
+            font-size: 0.75rem;
+            top: 0.05em;
+        }
+ 
+        @media (max-width: 600px) {
+            .resume-header { padding: 2rem 1.5rem 1.5rem; }
+            .resume-body { padding: 1.5rem 1.5rem 2rem; }
+            .resume-header h1 { font-size: 1.8rem; }
+            .entry-header, .entry-sub { flex-direction: column; }
+        }
+ 
+        @media print {
+            body { background: #fff; padding: 0; }
+            .page { box-shadow: none; }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+ 
+    <!-- Header -->
+    <header class="resume-header">
+        <h1>Jacob M. Frederickson</h1>
+        <div class="contact-info">
+            <span>(571) 375-8184</span>
+            <a href="mailto:jake.m.frederickson@gmail.com">jake.m.frederickson@gmail.com</a>
+            <a href="https://www.linkedin.com/in/jacobfrederickson" target="_blank">linkedin.com/in/jacobfrederickson</a>
+        </div>
+    </header>
+ 
+    <div class="resume-body">
+ 
+        <!-- Education -->
+        <section class="section">
+            <div class="section-title">Education</div>
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-org">Brigham Young University, Marriott School of Business</span>
+                    <span class="entry-location">Provo, UT</span>
+                </div>
+                <div class="entry-sub">
+                    <span class="entry-role">B.S. in Global Supply Chain Management <span class="entry-gpa">— GPA 3.63</span></span>
+                    <span class="entry-date">In Progress</span>
+                </div>
+                <ul class="bullet-list">
+                    <li>Relevant courses: Intro to Global Supply Chain Management, International Global Supply Chain</li>
+                    <li>Active member of Global Supply Chain Association</li>
+                </ul>
+            </div>
+        </section>
+ 
+        <!-- Skills -->
+        <section class="section">
+            <div class="section-title">Skills</div>
+            <ul class="skills-list">
+                <li>Intermediate Access SQL, Tableau, and HTML skills</li>
+                <li>Intermediate Excel skills (VBA, pivot tables, solver, macros, what-if analysis)</li>
+                <li>Fluent in Russian — speak, read, write &amp; interpret</li>
+            </ul>
+        </section>
+ 
+        <!-- Experience -->
+        <section class="section">
+            <div class="section-title">Experience</div>
+ 
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-org">Rosiesbeam</span>
+                    <span class="entry-location">Provo, UT</span>
+                </div>
+                <div class="entry-sub">
+                    <span class="entry-role">Project Manager</span>
+                    <span class="entry-date">Jan – Apr 2026</span>
+                </div>
+                <ul class="bullet-list">
+                    <li>Determined non-viability of plush toy product by conducting 60+ hours of market and cost analysis</li>
+                    <li>Led team as project manager to meet deliverables, ensuring 100% on-time delivery</li>
+                    <li>Navigated 75% budget cut by redirecting branding and outreach strategy to target Haitian Creole market</li>
+                </ul>
+            </div>
+ 
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-org">Engagex</span>
+                    <span class="entry-location">Provo, UT</span>
+                </div>
+                <div class="entry-sub">
+                    <span class="entry-role">Call Floor Representative</span>
+                    <span class="entry-date">Jun 2024 – Apr 2026</span>
+                </div>
+                <ul class="bullet-list">
+                    <li>Scheduled 120+ monthly appointments by maintaining 30+ calls/hour and optimizing client outreach</li>
+                    <li>Maintained 95%+ QA score by mastering call procedures and implementing supervisor feedback</li>
+                    <li>Increased conversion rate 10% by refining communication approach during client outreach calls</li>
+                    <li>Increased appointments set by 75% by analyzing call outcomes and implementing supervisor feedback</li>
+                </ul>
+            </div>
+ 
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-org">FSY (For the Strength of Youth)</span>
+                    <span class="entry-location">Arizona, Texas, Idaho, California</span>
+                </div>
+                <div class="entry-sub">
+                    <span class="entry-role">Camp Counselor and Assistant Coordinator</span>
+                    <span class="entry-date">May – Aug 2025; May 2026 – Present</span>
+                </div>
+                <ul class="bullet-list">
+                    <li>Ensured safety and emotional well-being of 16–20 youth participants weekly through one-on-one mentorship</li>
+                    <li>Delivered daily lessons and mentored youth by coordinating instruction and planning with co-counselor</li>
+                    <li>Managed execution of 10+ events, ensuring smooth delivery and on-time execution of scheduled activities</li>
+                    <li>Directed 10+ counselors weekly, ensuring productivity and well-being, through one-on-one mentoring</li>
+                </ul>
+            </div>
+ 
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-org">The Church of Jesus Christ of Latter-day Saints</span>
+                    <span class="entry-location">Latvia, Lithuania, Estonia &amp; Kazakhstan</span>
+                </div>
+                <div class="entry-sub">
+                    <span class="entry-role">Volunteer Representative</span>
+                    <span class="entry-date">Feb 2022 – Mar 2024</span>
+                </div>
+                <ul class="bullet-list">
+                    <li>Taught English in 5 foreign cities by collaborating with others to organize weekly English-speaking clubs</li>
+                    <li>Increased 100% weekly church service and club attendance through contacting and advertising efforts</li>
+                    <li>Led 6 missionaries in skills trainings, leading to 800% increase of key metrics</li>
+                    <li>Spearheaded the opening of new mission boundaries for 6 missionaries within 14+ cities</li>
+                </ul>
+            </div>
+        </section>
+ 
+        <!-- Personal -->
+        <section class="section">
+            <div class="section-title">Personal</div>
+            <ul class="bullet-list">
+                <li>High School Cross Country captain and 2× team sportsmanship award winner</li>
+                <li>Enjoy traveling and other cultures — Spain, Latvia, Lithuania, Estonia, Kazakhstan, Mexico, and Thailand</li>
+                <li>Russian and English language interpretation; church services and meetings</li>
+            </ul>
+        </section>
+ 
+    </div><!-- /resume-body -->
+</div><!-- /page -->
+</body>
+</html>
